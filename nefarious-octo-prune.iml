@@ -47,14 +47,13 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-library:1.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:4.1.8.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-cassandra:1.1.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-cassandra:1.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-cql:1.3.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:4.1.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:4.1.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:1.11.0.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: com.datastax.cassandra:cassandra-driver-dse:2.0.4" level="project" />
-    <orderEntry type="library" name="Maven: com.datastax.cassandra:cassandra-driver-core:2.0.4" level="project" />
-    <orderEntry type="library" name="Maven: io.netty:netty:3.9.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: com.datastax.cassandra:cassandra-driver-dse:2.1.4" level="project" />
+    <orderEntry type="library" name="Maven: com.datastax.cassandra:cassandra-driver-core:2.1.4" level="project" />
     <orderEntry type="library" name="Maven: com.codahale.metrics:metrics-core:3.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.12" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:jcl-over-slf4j:1.7.12" level="project" />

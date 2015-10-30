@@ -1,9 +1,5 @@
 package info.smartkit.eip.cassandra;
 
-/**
- * Created by yangboz on 10/30/15.
- */
-
 import info.smartkit.eip.cassandra.configs.CassandraConfiguration;
 import info.smartkit.eip.cassandra.domain.Event;
 import org.junit.Before;

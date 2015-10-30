@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: info.smartkit.eip.cassandra.EventRepositoryIntegrationTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 3.634 sec <<< FAILURE! - in info.smartkit.eip.cassandra.EventRepositoryIntegrationTest
-repositoryStoresAndRetrievesEvents(info.smartkit.eip.cassandra.EventRepositoryIntegrationTest)  Time elapsed: 0.018 sec  <<< ERROR!
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.771 sec <<< FAILURE! - in info.smartkit.eip.cassandra.EventRepositoryIntegrationTest
+repositoryStoresAndRetrievesEvents(info.smartkit.eip.cassandra.EventRepositoryIntegrationTest)  Time elapsed: 0.004 sec  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:94)
 	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)

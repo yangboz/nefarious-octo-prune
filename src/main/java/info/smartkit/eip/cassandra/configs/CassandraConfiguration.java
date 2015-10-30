@@ -1,5 +1,7 @@
 package info.smartkit.eip.cassandra.configs;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,13 +13,12 @@ import org.springframework.data.cassandra.mapping.BasicCassandraMappingContext;
 import org.springframework.data.cassandra.mapping.CassandraMappingContext;
 import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
 
-/**
- * Created by yangboz on 10/30/15.
- */
 @Configuration
 @PropertySource(value = {"classpath:cassandra.properties"})
-@EnableCassandraRepositories(basePackages = {"info.smartkit.eip.cassandra"})
+@EnableCassandraRepositories(basePackages = {"info.smartkit.eip.cassandra.dao"})
 public class CassandraConfiguration extends AbstractCassandraConfiguration {
+
+    private static final Logger LOG = LoggerFactory.getLogger(CassandraConfiguration.class);
 
     @Autowired
     private Environment environment;

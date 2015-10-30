@@ -1,9 +1,5 @@
 package info.smartkit.eip.cassandra;
 
-/**
- * Created by yangboz on 10/30/15.
- */
-
 import com.datastax.driver.core.utils.UUIDs;
 import com.google.common.collect.ImmutableSet;
 import info.smartkit.eip.cassandra.dao.EventRepository;
