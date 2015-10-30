@@ -1,0 +1,8 @@
+/Volumes/Transcend/github/nefarious-octo-prune/src/main/java/info/smartkit/eip/cassandra/controllers/EventsController.java
+/Volumes/Transcend/github/nefarious-octo-prune/src/main/java/info/smartkit/eip/cassandra/configs/CassandraConfiguration.java
+/Volumes/Transcend/github/nefarious-octo-prune/src/main/java/info/smartkit/eip/cassandra/configs/SimpleCORSFilter.java
+/Volumes/Transcend/github/nefarious-octo-prune/src/main/java/info/smartkit/eip/cassandra/configs/SwaggerConfig.java
+/Volumes/Transcend/github/nefarious-octo-prune/src/main/java/info/smartkit/eip/cassandra/App.java
+/Volumes/Transcend/github/nefarious-octo-prune/src/main/java/info/smartkit/eip/cassandra/dao/EventRepository.java
+/Volumes/Transcend/github/nefarious-octo-prune/src/main/java/info/smartkit/eip/cassandra/configs/StaticResourceConfiguration.java
+/Volumes/Transcend/github/nefarious-octo-prune/src/main/java/info/smartkit/eip/cassandra/domain/Event.java

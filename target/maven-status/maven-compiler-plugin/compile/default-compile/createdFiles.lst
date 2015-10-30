@@ -1,0 +1,8 @@
+info/smartkit/eip/cassandra/dao/EventRepository.class
+info/smartkit/eip/cassandra/configs/SimpleCORSFilter.class
+info/smartkit/eip/cassandra/App.class
+info/smartkit/eip/cassandra/configs/StaticResourceConfiguration.class
+info/smartkit/eip/cassandra/configs/CassandraConfiguration.class
+info/smartkit/eip/cassandra/controllers/EventsController.class
+info/smartkit/eip/cassandra/domain/Event.class
+info/smartkit/eip/cassandra/configs/SwaggerConfig.class

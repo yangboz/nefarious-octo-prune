@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="info.smartkit.eip.cassandra.EventRepositoryIntegrationTest" time="0.02" tests="2" errors="2" skipped="0" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="25.40-b23"/>
+    <property name="user.country.format" value="CN"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Volumes/Transcend/github/nefarious-octo-prune"/>
+    <property name="java.runtime.version" value="1.8.0_40-ea-b19"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/l8/j7qldwm96tl8l__dr4gshdyh0000gn/T/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/Users/yangboz/mvn//bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/yangboz/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.10.5"/>
+    <property name="user.home" value="/Users/yangboz"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="yangboz"/>
+    <property name="java.class.path" value="/Users/yangboz/mvn//boot/plexus-classworlds-2.5.1.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_40-ea"/>
+    <property name="java.ext.dirs" value="/Users/yangboz/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/Users/yangboz/mvn"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="repositoryStoresAndRetrievesEvents" classname="info.smartkit.eip.cassandra.EventRepositoryIntegrationTest" time="0.018">
+    <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:94)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:259)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:261)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:219)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'eventRepository': Invocation of init method failed; nested exception is java.lang.AbstractMethodError: org.springframework.data.repository.core.support.RepositoryFactorySupport.getTargetRepository(Lorg/springframework/data/repository/core/RepositoryInformation;)Ljava/lang/Object;
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1572)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:736)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:759)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:259)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:261)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:219)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: java.lang.AbstractMethodError: org.springframework.data.repository.core.support.RepositoryFactorySupport.getTargetRepository(Lorg/springframework/data/repository/core/RepositoryInformation;)Ljava/lang/Object;
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:185)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:251)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:237)
+	at org.springframework.data.cassandra.repository.support.CassandraRepositoryFactoryBean.afterPropertiesSet(CassandraRepositoryFactoryBean.java:62)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1631)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1568)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:736)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:759)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:259)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:261)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:219)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</error>
+    <system-out><![CDATA[13:21:01.624 [main] DEBUG o.s.t.c.j.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class info.smartkit.eip.cassandra.EventRepositoryIntegrationTest]
+13:21:01.645 [main] DEBUG o.s.test.context.BootstrapUtils - Instantiating TestContextBootstrapper from class [org.springframework.test.context.support.DefaultTestContextBootstrapper]
+13:21:01.696 [main] DEBUG o.s.t.c.s.AbstractDelegatingSmartContextLoader - Delegating to AnnotationConfigContextLoader to process context configuration [ContextConfigurationAttributes@210366b4 declaringClass = 'info.smartkit.eip.cassandra.BaseIntegrationTest', classes = '{class info.smartkit.eip.cassandra.configs.CassandraConfiguration}', locations = '{}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.test.context.ContextLoader'].
+13:21:01.699 [main] DEBUG o.s.t.c.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [info.smartkit.eip.cassandra.EventRepositoryIntegrationTest]
+13:21:01.709 [main] DEBUG o.s.t.c.s.DefaultTestContextBootstrapper - @TestExecutionListeners is not present for class [info.smartkit.eip.cassandra.EventRepositoryIntegrationTest]: using defaults.
+13:21:01.726 [main] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+13:21:01.774 [main] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@33c7e1bb, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@34c4973, org.springframework.test.context.support.DirtiesContextTestExecutionListener@52feb982, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7a765367, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@76b0bfab]
+13:21:01.777 [main] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [info.smartkit.eip.cassandra.EventRepositoryIntegrationTest]
+13:21:01.779 [main] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [info.smartkit.eip.cassandra.EventRepositoryIntegrationTest]
+13:21:01.780 [main] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [info.smartkit.eip.cassandra.EventRepositoryIntegrationTest]
+13:21:01.781 [main] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [info.smartkit.eip.cassandra.EventRepositoryIntegrationTest]
+13:21:01.785 [main] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [info.smartkit.eip.cassandra.EventRepositoryIntegrationTest]
+13:21:01.785 [main] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [info.smartkit.eip.cassandra.EventRepositoryIntegrationTest]
+13:21:01.788 [main] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@fad74ee testClass = EventRepositoryIntegrationTest, testInstance = info.smartkit.eip.cassandra.EventRepositoryIntegrationTest@1a1d6a08, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37d31475 testClass = EventRepositoryIntegrationTest, locations = '{}', classes = '{class info.smartkit.eip.cassandra.configs.CassandraConfiguration}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]].
+13:21:01.789 [main] DEBUG o.s.t.c.s.AbstractDelegatingSmartContextLoader - Delegating to AnnotationConfigContextLoader to load context from [MergedContextConfiguration@37d31475 testClass = EventRepositoryIntegrationTest, locations = '{}', classes = '{class info.smartkit.eip.cassandra.configs.CassandraConfiguration}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]].
+13:21:01.789 [main] DEBUG o.s.t.c.s.AbstractGenericContextLoader - Loading ApplicationContext for merged context configuration [[MergedContextConfiguration@37d31475 testClass = EventRepositoryIntegrationTest, locations = '{}', classes = '{class info.smartkit.eip.cassandra.configs.CassandraConfiguration}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+13:21:01.921 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+13:21:01.924 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+13:21:01.924 [main] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+13:21:01.924 [main] DEBUG o.s.t.c.s.AnnotationConfigContextLoader - Registering annotated classes: {class info.smartkit.eip.cassandra.configs.CassandraConfiguration}
+13:21:02.011 [main] INFO  o.s.c.s.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@76a3e297: startup date [Fri Oct 30 13:21:02 CST 2015]; root of context hierarchy
+13:21:02.011 [main] DEBUG o.s.c.s.GenericApplicationContext - Bean factory for org.springframework.context.support.GenericApplicationContext@76a3e297: org.springframework.beans.factory.support.DefaultListableBeanFactory@2d9d4f9d: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,cassandraConfiguration]; root of factory hierarchy
+13:21:02.029 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+13:21:02.030 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+13:21:02.057 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor' to allow for resolving potential circular references
+13:21:02.060 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+13:21:02.089 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [class path resource [cassandra.properties]] PropertySource with lowest search precedence
+13:21:02.124 [main] DEBUG o.s.c.a.ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method info.smartkit.eip.cassandra.configs.CassandraConfiguration.cluster()
+13:21:02.125 [main] DEBUG o.s.c.a.ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method info.smartkit.eip.cassandra.configs.CassandraConfiguration.cassandraMapping()
+13:21:02.126 [main] DEBUG o.s.c.a.ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method info.smartkit.eip.cassandra.configs.CassandraConfiguration.session()
+13:21:02.128 [main] DEBUG o.s.c.a.ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method info.smartkit.eip.cassandra.configs.CassandraConfiguration.cassandraTemplate()
+13:21:02.129 [main] DEBUG o.s.c.a.ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method info.smartkit.eip.cassandra.configs.CassandraConfiguration.cassandraConverter()
+13:21:02.146 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+13:21:02.146 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+13:21:02.147 [main] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+13:21:02.153 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Looking for matching resources in jar file [file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-cassandra/1.1.0.RELEASE/spring-data-cassandra-1.1.0.RELEASE.jar]
+13:21:02.164 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Looking for matching resources in jar file [file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar]
+13:21:02.190 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:org/springframework/data/**/repository/support/**/*.class] to resources [URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-cassandra/1.1.0.RELEASE/spring-data-cassandra-1.1.0.RELEASE.jar!/org/springframework/data/cassandra/repository/support/CassandraRepositoryFactory$CassandraQueryLookupStrategy.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-cassandra/1.1.0.RELEASE/spring-data-cassandra-1.1.0.RELEASE.jar!/org/springframework/data/cassandra/repository/support/SimpleCassandraRepository.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-cassandra/1.1.0.RELEASE/spring-data-cassandra-1.1.0.RELEASE.jar!/org/springframework/data/cassandra/repository/support/CassandraRepositoryFactory$1.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-cassandra/1.1.0.RELEASE/spring-data-cassandra-1.1.0.RELEASE.jar!/org/springframework/data/cassandra/repository/support/CassandraRepositoryFactory.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-cassandra/1.1.0.RELEASE/spring-data-cassandra-1.1.0.RELEASE.jar!/org/springframework/data/cassandra/repository/support/MappingCassandraEntityInformation.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-cassandra/1.1.0.RELEASE/spring-data-cassandra-1.1.0.RELEASE.jar!/org/springframework/data/cassandra/repository/support/BasicMapId.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-cassandra/1.1.0.RELEASE/spring-data-cassandra-1.1.0.RELEASE.jar!/org/springframework/data/cassandra/repository/support/CassandraRepositoryFactoryBean.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/DomainClassConverter$ConversionMatchAbbreviationException.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/DomainClassConverter$ToIdConverter.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/Repositories$EmptyRepositoryFactoryInformation.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/PagingAndSortingRepositoryInvoker.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/QueryMethodParameterConversionException.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/MethodParameters.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/RepositoryInvoker.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/RepositoryInvokerFactory.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/DomainClassPropertyEditorRegistrar.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/AnnotationAttribute.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/DefaultRepositoryInvokerFactory.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/MethodParameters$AnnotationNamingMethodParameter.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/CrudRepositoryInvoker.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/Repositories.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/DomainClassConverter$ToEntityConverter.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/ReflectionRepositoryInvoker.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/DomainClassPropertyEditor.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/DomainClassConverter.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/DomainClassConverter$1.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/RepositoryInvocationInformation.class]]
+13:21:02.238 [main] DEBUG o.s.c.a.ClassPathScanningCandidateComponentProvider - Identified candidate component class: URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-cassandra/1.1.0.RELEASE/spring-data-cassandra-1.1.0.RELEASE.jar!/org/springframework/data/cassandra/repository/support/CassandraRepositoryFactory.class]
+13:21:02.284 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+13:21:02.284 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+13:21:02.285 [main] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+13:21:02.298 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/Volumes/Transcend/github/nefarious-octo-prune/target/test-classes/info/smartkit/eip/cassandra]
+13:21:02.298 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/test-classes/info/smartkit/eip/cassandra] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/test-classes/info/smartkit/eip/cassandra/**/*.class]
+13:21:02.301 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra]
+13:21:02.302 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/**/*.class]
+13:21:02.302 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/configs] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/**/*.class]
+13:21:02.303 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/controllers] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/**/*.class]
+13:21:02.303 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/dao] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/**/*.class]
+13:21:02.303 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/domain] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/**/*.class]
+13:21:02.304 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:info/smartkit/eip/cassandra/**/*.class] to resources [file [/Volumes/Transcend/github/nefarious-octo-prune/target/test-classes/info/smartkit/eip/cassandra/BaseIntegrationTest.class], file [/Volumes/Transcend/github/nefarious-octo-prune/target/test-classes/info/smartkit/eip/cassandra/EventRepositoryIntegrationTest.class], file [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/configs/SimpleCORSFilter.class], file [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/configs/CassandraConfiguration.class], file [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/configs/SwaggerConfig.class], file [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/configs/StaticResourceConfiguration.class], file [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/controllers/EventsController.class], file [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/dao/EventRepository.class], file [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/domain/Event.class], file [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/App.class]]
+13:21:02.366 [main] DEBUG o.s.d.r.c.RepositoryComponentProvider - Identified candidate component class: file [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/dao/EventRepository.class]
+13:21:02.481 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+13:21:02.481 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+13:21:02.481 [main] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+13:21:02.483 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/Volumes/Transcend/github/nefarious-octo-prune/target/test-classes/info/smartkit/eip/cassandra]
+13:21:02.484 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/test-classes/info/smartkit/eip/cassandra] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/test-classes/info/smartkit/eip/cassandra/**/*EventRepositoryImpl.class]
+13:21:02.485 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra]
+13:21:02.485 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/**/*EventRepositoryImpl.class]
+13:21:02.485 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/configs] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/**/*EventRepositoryImpl.class]
+13:21:02.486 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/controllers] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/**/*EventRepositoryImpl.class]
+13:21:02.486 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/dao] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/**/*EventRepositoryImpl.class]
+13:21:02.486 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/domain] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/**/*EventRepositoryImpl.class]
+13:21:02.487 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:info/smartkit/eip/cassandra/**/*EventRepositoryImpl.class] to resources []
+13:21:02.492 [main] DEBUG o.s.d.r.c.RepositoryConfigurationDelegate - Spring Data Cassandra - Registering repository: eventRepository - Interface: info.smartkit.eip.cassandra.dao.EventRepository - Factory: org.springframework.data.cassandra.repository.support.CassandraRepositoryFactoryBean
+13:21:02.612 [main] DEBUG o.s.c.a.ConfigurationClassEnhancer - Successfully enhanced info.smartkit.eip.cassandra.configs.CassandraConfiguration; enhanced class name is: info.smartkit.eip.cassandra.configs.CassandraConfiguration$$EnhancerBySpringCGLIB$$5d0f4467
+13:21:02.612 [main] DEBUG o.s.c.a.ConfigurationClassPostProcessor - Replacing bean definition 'cassandraConfiguration' existing class name 'info.smartkit.eip.cassandra.configs.CassandraConfiguration' with enhanced class name 'info.smartkit.eip.cassandra.configs.CassandraConfiguration$$EnhancerBySpringCGLIB$$5d0f4467'
+13:21:02.618 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+13:21:02.618 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+13:21:02.619 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor' to allow for resolving potential circular references
+13:21:02.619 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+13:21:02.620 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+13:21:02.620 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+13:21:02.620 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor' to allow for resolving potential circular references
+13:21:02.621 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+13:21:02.621 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+13:21:02.621 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+13:21:02.628 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor' to allow for resolving potential circular references
+13:21:02.628 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+13:21:02.629 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+13:21:02.629 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+13:21:02.629 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor' to allow for resolving potential circular references
+13:21:02.630 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+13:21:02.630 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+13:21:02.630 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+13:21:02.631 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor' to allow for resolving potential circular references
+13:21:02.631 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+13:21:02.631 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor'
+13:21:02.631 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor'
+13:21:02.632 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor' to allow for resolving potential circular references
+13:21:02.632 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor'
+13:21:02.635 [main] DEBUG o.s.c.s.GenericApplicationContext - Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@5fa07e12]
+13:21:02.638 [main] DEBUG o.s.c.s.GenericApplicationContext - Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@6a370f4]
+13:21:02.645 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2d9d4f9d: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,cassandraConfiguration,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor,cluster,cassandraMapping,session,cassandraTemplate,cassandraConverter,org.springframework.data.cassandra.repository.config.CassandraRepositoryConfigurationExtension#0,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor,eventRepository]; root of factory hierarchy
+13:21:02.646 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+13:21:02.646 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+13:21:02.646 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+13:21:02.646 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+13:21:02.646 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'cassandraConfiguration'
+13:21:02.646 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'cassandraConfiguration'
+13:21:02.657 [main] DEBUG o.s.b.f.annotation.InjectionMetadata - Registered injected element on class [info.smartkit.eip.cassandra.configs.CassandraConfiguration$$EnhancerBySpringCGLIB$$5d0f4467]: AutowiredFieldElement for private org.springframework.core.env.Environment info.smartkit.eip.cassandra.configs.CassandraConfiguration.environment
+13:21:02.657 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'cassandraConfiguration' to allow for resolving potential circular references
+13:21:02.691 [main] DEBUG o.s.b.f.annotation.InjectionMetadata - Processing injected element of bean 'cassandraConfiguration': AutowiredFieldElement for private org.springframework.core.env.Environment info.smartkit.eip.cassandra.configs.CassandraConfiguration.environment
+13:21:02.699 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'environment'
+13:21:02.699 [main] DEBUG o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowiring by type from bean name 'cassandraConfiguration' to bean named 'environment'
+13:21:02.701 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'cassandraConfiguration'
+13:21:02.701 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+13:21:02.701 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+13:21:02.702 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'cluster'
+13:21:02.702 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'cluster'
+13:21:02.706 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cassandraConfiguration'
+13:21:02.760 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Searching for key 'cassandra.contactpoints' in [systemProperties]
+13:21:02.761 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Searching for key 'cassandra.contactpoints' in [systemEnvironment]
+13:21:02.761 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Searching for key 'cassandra.contactpoints' in [class path resource [cassandra.properties]]
+13:21:02.761 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'cassandra.contactpoints' in [class path resource [cassandra.properties]] with type [String] and value '127.0.0.1'
+13:21:02.763 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Searching for key 'cassandra.port' in [systemProperties]
+13:21:02.764 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Searching for key 'cassandra.port' in [systemEnvironment]
+13:21:02.764 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Searching for key 'cassandra.port' in [class path resource [cassandra.properties]]
+13:21:02.765 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'cassandra.port' in [class path resource [cassandra.properties]] with type [String] and value '9042'
+13:21:02.769 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'cluster' to allow for resolving potential circular references
+13:21:02.799 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name 'cluster'
+13:21:02.811 [main] WARN  c.d.driver.core.FrameCompressor - Cannot find Snappy class, you should make sure the Snappy library is in the classpath if you intend to use it. Snappy compression will not be available for the protocol.
+13:21:02.812 [main] WARN  c.d.driver.core.FrameCompressor - Cannot find LZ4 class, you should make sure the LZ4 library is in the classpath if you intend to use it. LZ4 compression will not be available for the protocol.
+13:21:02.891 [main] DEBUG com.datastax.driver.core.Cluster - Starting new cluster with contact points [/127.0.0.1:9042]
+13:21:03.111 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'cluster'
+13:21:03.113 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'cassandraMapping'
+13:21:03.113 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'cassandraMapping'
+13:21:03.113 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cassandraConfiguration'
+13:21:03.187 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'cassandraMapping' to allow for resolving potential circular references
+13:21:03.198 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name 'cassandraMapping'
+13:21:03.198 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'cassandraMapping'
+13:21:03.198 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'session'
+13:21:03.199 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'session'
+13:21:03.199 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cassandraConfiguration'
+13:21:03.204 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cluster'
+13:21:03.224 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cluster'
+13:21:03.224 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'cassandraConverter'
+13:21:03.225 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'cassandraConverter'
+13:21:03.225 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cassandraConfiguration'
+13:21:03.230 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cassandraMapping'
+13:21:03.250 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'cassandraConverter' to allow for resolving potential circular references
+13:21:03.256 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name 'cassandraConverter'
+13:21:03.257 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'cassandraConverter'
+13:21:03.257 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Searching for key 'cassandra.keyspace' in [systemProperties]
+13:21:03.257 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Searching for key 'cassandra.keyspace' in [systemEnvironment]
+13:21:03.257 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Searching for key 'cassandra.keyspace' in [class path resource [cassandra.properties]]
+13:21:03.257 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'cassandra.keyspace' in [class path resource [cassandra.properties]] with type [String] and value 'events'
+13:21:03.264 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'session' to allow for resolving potential circular references
+13:21:03.270 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name 'session'
+13:21:03.564 [main] DEBUG com.datastax.driver.core.Connection - [/127.0.0.1:9042-1] Transport initialized and ready
+13:21:03.565 [main] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing node list and token map
+13:21:03.681 [main] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing schema
+13:21:03.842 [main] DEBUG c.d.driver.core.ControlConnection - [Control connection] Successfully connected to /127.0.0.1:9042
+13:21:03.842 [main] INFO  c.d.d.c.p.DCAwareRoundRobinPolicy - Using data-center name 'datacenter1' for DCAwareRoundRobinPolicy (if this is incorrect, please provide the correct datacenter name with DCAwareRoundRobinPolicy constructor)
+13:21:03.848 [Cassandra Java Driver worker-0] INFO  com.datastax.driver.core.Cluster - New Cassandra host /127.0.0.1:9042 added
+13:21:03.884 [Cassandra Java Driver worker-1] DEBUG com.datastax.driver.core.Connection - [/127.0.0.1:9042-2] Transport initialized and ready
+13:21:03.887 [Cassandra Java Driver worker-1] DEBUG com.datastax.driver.core.Connection - [/127.0.0.1:9042-3] Transport initialized and ready
+13:21:03.888 [Cassandra Java Driver worker-1] DEBUG com.datastax.driver.core.Session - Added connection pool for /127.0.0.1:9042
+13:21:03.931 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'session'
+13:21:03.931 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'cassandraTemplate'
+13:21:03.931 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'cassandraTemplate'
+13:21:03.932 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cassandraConfiguration'
+13:21:03.932 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'session'
+13:21:03.952 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'session'
+13:21:03.952 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cassandraConverter'
+13:21:03.981 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'cassandraTemplate' to allow for resolving potential circular references
+13:21:04.018 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name 'cassandraTemplate'
+13:21:04.019 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'cassandraTemplate'
+13:21:04.019 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cassandraConverter'
+13:21:04.019 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor'
+13:21:04.020 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eventRepository'
+13:21:04.020 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'eventRepository'
+13:21:04.027 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'eventRepository' to allow for resolving potential circular references
+13:21:04.066 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean '(inner bean)#1f010bf0'
+13:21:04.066 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean '(inner bean)#10cf09e8'
+13:21:04.074 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name '(inner bean)#10cf09e8'
+13:21:04.075 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean '(inner bean)#10cf09e8'
+13:21:04.092 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean '(inner bean)#1f010bf0'
+13:21:04.093 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean '(inner bean)#2a62b5bc'
+13:21:04.105 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean '(inner bean)#2a62b5bc'
+13:21:04.106 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cassandraTemplate'
+13:21:04.108 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name 'eventRepository'
+13:21:04.140 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Retrieved dependent beans for bean '(inner bean)#1f010bf0': [eventRepository]
+13:21:04.142 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Retrieved dependent beans for bean '(inner bean)#10cf09e8': [(inner bean)#1f010bf0]
+13:21:04.163 [main] WARN  o.s.c.s.GenericApplicationContext - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'eventRepository': Invocation of init method failed; nested exception is java.lang.AbstractMethodError: org.springframework.data.repository.core.support.RepositoryFactorySupport.getTargetRepository(Lorg/springframework/data/repository/core/RepositoryInformation;)Ljava/lang/Object;
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1572) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:736) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:759) ~[spring-context-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:259) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:261) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:219) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264) [surefire-junit4-2.17.jar:2.17]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.17.jar:2.17]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124) [surefire-junit4-2.17.jar:2.17]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200) [surefire-booter-2.17.jar:2.17]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153) [surefire-booter-2.17.jar:2.17]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.17.jar:2.17]
+Caused by: java.lang.AbstractMethodError: org.springframework.data.repository.core.support.RepositoryFactorySupport.getTargetRepository(Lorg/springframework/data/repository/core/RepositoryInformation;)Ljava/lang/Object;
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:185) ~[spring-data-commons-1.11.0.RELEASE.jar:na]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:251) ~[spring-data-commons-1.11.0.RELEASE.jar:na]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:237) ~[spring-data-commons-1.11.0.RELEASE.jar:na]
+	at org.springframework.data.cassandra.repository.support.CassandraRepositoryFactoryBean.afterPropertiesSet(CassandraRepositoryFactoryBean.java:62) ~[spring-data-cassandra-1.1.0.RELEASE.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1631) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1568) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	... 40 common frames omitted
+13:21:04.165 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2d9d4f9d: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,cassandraConfiguration,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor,cluster,cassandraMapping,session,cassandraTemplate,cassandraConverter,org.springframework.data.cassandra.repository.config.CassandraRepositoryConfigurationExtension#0,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor,eventRepository]; root of factory hierarchy
+13:21:04.165 [main] DEBUG o.s.b.f.s.DisposableBeanAdapter - Invoking destroy() on bean with name 'session'
+13:21:04.167 [main] DEBUG com.datastax.driver.core.Connection - [/127.0.0.1:9042-2] closing connection
+13:21:04.180 [main] DEBUG com.datastax.driver.core.Connection - [/127.0.0.1:9042-3] closing connection
+13:21:04.184 [main] DEBUG o.s.b.f.s.DisposableBeanAdapter - Invoking destroy() on bean with name 'cluster'
+13:21:04.184 [main] DEBUG com.datastax.driver.core.Cluster - Shutting down
+13:21:04.187 [main] DEBUG com.datastax.driver.core.Connection - [/127.0.0.1:9042-1] closing connection
+13:21:04.202 [main] ERROR o.s.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@34c4973] to prepare test instance [info.smartkit.eip.cassandra.EventRepositoryIntegrationTest@1a1d6a08]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:94) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:259) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:261) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:219) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264) [surefire-junit4-2.17.jar:2.17]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.17.jar:2.17]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124) [surefire-junit4-2.17.jar:2.17]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200) [surefire-booter-2.17.jar:2.17]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153) [surefire-booter-2.17.jar:2.17]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.17.jar:2.17]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'eventRepository': Invocation of init method failed; nested exception is java.lang.AbstractMethodError: org.springframework.data.repository.core.support.RepositoryFactorySupport.getTargetRepository(Lorg/springframework/data/repository/core/RepositoryInformation;)Ljava/lang/Object;
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1572) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:736) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:759) ~[spring-context-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	... 25 common frames omitted
+Caused by: java.lang.AbstractMethodError: org.springframework.data.repository.core.support.RepositoryFactorySupport.getTargetRepository(Lorg/springframework/data/repository/core/RepositoryInformation;)Ljava/lang/Object;
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:185) ~[spring-data-commons-1.11.0.RELEASE.jar:na]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:251) ~[spring-data-commons-1.11.0.RELEASE.jar:na]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:237) ~[spring-data-commons-1.11.0.RELEASE.jar:na]
+	at org.springframework.data.cassandra.repository.support.CassandraRepositoryFactoryBean.afterPropertiesSet(CassandraRepositoryFactoryBean.java:62) ~[spring-data-cassandra-1.1.0.RELEASE.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1631) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1568) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	... 40 common frames omitted
+]]></system-out>
+  </testcase>
+  <testcase name="repositoryDeletesStoredEvents" classname="info.smartkit.eip.cassandra.EventRepositoryIntegrationTest" time="0.002">
+    <error message="Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:94)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:259)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:261)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:219)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'eventRepository': Invocation of init method failed; nested exception is java.lang.AbstractMethodError: org.springframework.data.repository.core.support.RepositoryFactorySupport.getTargetRepository(Lorg/springframework/data/repository/core/RepositoryInformation;)Ljava/lang/Object;
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1572)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:736)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:759)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:259)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:261)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:219)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+Caused by: java.lang.AbstractMethodError: org.springframework.data.repository.core.support.RepositoryFactorySupport.getTargetRepository(Lorg/springframework/data/repository/core/RepositoryInformation;)Ljava/lang/Object;
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:185)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:251)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:237)
+	at org.springframework.data.cassandra.repository.support.CassandraRepositoryFactoryBean.afterPropertiesSet(CassandraRepositoryFactoryBean.java:62)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1631)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1568)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:736)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:759)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125)
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109)
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68)
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86)
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117)
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:259)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:261)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:219)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+</error>
+    <system-out><![CDATA[13:21:04.220 [main] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [info.smartkit.eip.cassandra.EventRepositoryIntegrationTest]
+13:21:04.221 [main] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [info.smartkit.eip.cassandra.EventRepositoryIntegrationTest]
+13:21:04.223 [main] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@fad74ee testClass = EventRepositoryIntegrationTest, testInstance = info.smartkit.eip.cassandra.EventRepositoryIntegrationTest@2250b9f2, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@37d31475 testClass = EventRepositoryIntegrationTest, locations = '{}', classes = '{class info.smartkit.eip.cassandra.configs.CassandraConfiguration}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]].
+13:21:04.224 [main] DEBUG o.s.t.c.s.AbstractDelegatingSmartContextLoader - Delegating to AnnotationConfigContextLoader to load context from [MergedContextConfiguration@37d31475 testClass = EventRepositoryIntegrationTest, locations = '{}', classes = '{class info.smartkit.eip.cassandra.configs.CassandraConfiguration}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]].
+13:21:04.225 [main] DEBUG o.s.t.c.s.AbstractGenericContextLoader - Loading ApplicationContext for merged context configuration [[MergedContextConfiguration@37d31475 testClass = EventRepositoryIntegrationTest, locations = '{}', classes = '{class info.smartkit.eip.cassandra.configs.CassandraConfiguration}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]].
+13:21:04.226 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+13:21:04.230 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+13:21:04.231 [main] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+13:21:04.231 [main] DEBUG o.s.t.c.s.AnnotationConfigContextLoader - Registering annotated classes: {class info.smartkit.eip.cassandra.configs.CassandraConfiguration}
+13:21:04.235 [main] INFO  o.s.c.s.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@7e3181aa: startup date [Fri Oct 30 13:21:04 CST 2015]; root of context hierarchy
+13:21:04.236 [main] DEBUG o.s.c.s.GenericApplicationContext - Bean factory for org.springframework.context.support.GenericApplicationContext@7e3181aa: org.springframework.beans.factory.support.DefaultListableBeanFactory@253d9f73: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,cassandraConfiguration]; root of factory hierarchy
+13:21:04.238 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+13:21:04.238 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+13:21:04.239 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor' to allow for resolving potential circular references
+13:21:04.239 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+13:21:04.298 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [class path resource [cassandra.properties]] PropertySource with lowest search precedence
+13:21:04.303 [main] DEBUG o.s.c.a.ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method info.smartkit.eip.cassandra.configs.CassandraConfiguration.cluster()
+13:21:04.304 [main] DEBUG o.s.c.a.ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method info.smartkit.eip.cassandra.configs.CassandraConfiguration.cassandraMapping()
+13:21:04.305 [main] DEBUG o.s.c.a.ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method info.smartkit.eip.cassandra.configs.CassandraConfiguration.session()
+13:21:04.308 [main] DEBUG o.s.c.a.ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method info.smartkit.eip.cassandra.configs.CassandraConfiguration.cassandraTemplate()
+13:21:04.309 [main] DEBUG o.s.c.a.ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method info.smartkit.eip.cassandra.configs.CassandraConfiguration.cassandraConverter()
+13:21:04.316 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+13:21:04.316 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+13:21:04.316 [main] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+13:21:04.317 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Looking for matching resources in jar file [file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-cassandra/1.1.0.RELEASE/spring-data-cassandra-1.1.0.RELEASE.jar]
+13:21:04.339 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Looking for matching resources in jar file [file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar]
+13:21:04.348 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:org/springframework/data/**/repository/support/**/*.class] to resources [URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-cassandra/1.1.0.RELEASE/spring-data-cassandra-1.1.0.RELEASE.jar!/org/springframework/data/cassandra/repository/support/CassandraRepositoryFactory$CassandraQueryLookupStrategy.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-cassandra/1.1.0.RELEASE/spring-data-cassandra-1.1.0.RELEASE.jar!/org/springframework/data/cassandra/repository/support/SimpleCassandraRepository.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-cassandra/1.1.0.RELEASE/spring-data-cassandra-1.1.0.RELEASE.jar!/org/springframework/data/cassandra/repository/support/CassandraRepositoryFactory$1.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-cassandra/1.1.0.RELEASE/spring-data-cassandra-1.1.0.RELEASE.jar!/org/springframework/data/cassandra/repository/support/CassandraRepositoryFactory.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-cassandra/1.1.0.RELEASE/spring-data-cassandra-1.1.0.RELEASE.jar!/org/springframework/data/cassandra/repository/support/MappingCassandraEntityInformation.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-cassandra/1.1.0.RELEASE/spring-data-cassandra-1.1.0.RELEASE.jar!/org/springframework/data/cassandra/repository/support/BasicMapId.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-cassandra/1.1.0.RELEASE/spring-data-cassandra-1.1.0.RELEASE.jar!/org/springframework/data/cassandra/repository/support/CassandraRepositoryFactoryBean.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/DomainClassConverter$ConversionMatchAbbreviationException.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/DomainClassConverter$ToIdConverter.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/Repositories$EmptyRepositoryFactoryInformation.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/PagingAndSortingRepositoryInvoker.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/QueryMethodParameterConversionException.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/MethodParameters.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/RepositoryInvoker.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/RepositoryInvokerFactory.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/DomainClassPropertyEditorRegistrar.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/AnnotationAttribute.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/DefaultRepositoryInvokerFactory.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/MethodParameters$AnnotationNamingMethodParameter.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/CrudRepositoryInvoker.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/Repositories.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/DomainClassConverter$ToEntityConverter.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/ReflectionRepositoryInvoker.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/DomainClassPropertyEditor.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/DomainClassConverter.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/DomainClassConverter$1.class], URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-commons/1.11.0.RELEASE/spring-data-commons-1.11.0.RELEASE.jar!/org/springframework/data/repository/support/RepositoryInvocationInformation.class]]
+13:21:04.353 [main] DEBUG o.s.c.a.ClassPathScanningCandidateComponentProvider - Identified candidate component class: URL [jar:file:/Users/yangboz/.m2/repository/org/springframework/data/spring-data-cassandra/1.1.0.RELEASE/spring-data-cassandra-1.1.0.RELEASE.jar!/org/springframework/data/cassandra/repository/support/CassandraRepositoryFactory.class]
+13:21:04.575 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+13:21:04.578 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+13:21:04.578 [main] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+13:21:04.580 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/Volumes/Transcend/github/nefarious-octo-prune/target/test-classes/info/smartkit/eip/cassandra]
+13:21:04.580 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/test-classes/info/smartkit/eip/cassandra] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/test-classes/info/smartkit/eip/cassandra/**/*.class]
+13:21:04.581 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra]
+13:21:04.581 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/**/*.class]
+13:21:04.581 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/configs] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/**/*.class]
+13:21:04.582 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/controllers] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/**/*.class]
+13:21:04.582 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/dao] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/**/*.class]
+13:21:04.583 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/domain] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/**/*.class]
+13:21:04.584 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:info/smartkit/eip/cassandra/**/*.class] to resources [file [/Volumes/Transcend/github/nefarious-octo-prune/target/test-classes/info/smartkit/eip/cassandra/BaseIntegrationTest.class], file [/Volumes/Transcend/github/nefarious-octo-prune/target/test-classes/info/smartkit/eip/cassandra/EventRepositoryIntegrationTest.class], file [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/configs/SimpleCORSFilter.class], file [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/configs/CassandraConfiguration.class], file [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/configs/SwaggerConfig.class], file [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/configs/StaticResourceConfiguration.class], file [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/controllers/EventsController.class], file [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/dao/EventRepository.class], file [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/domain/Event.class], file [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/App.class]]
+13:21:04.597 [main] DEBUG o.s.d.r.c.RepositoryComponentProvider - Identified candidate component class: file [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/dao/EventRepository.class]
+13:21:04.601 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+13:21:04.601 [main] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+13:21:04.601 [main] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+13:21:04.602 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/Volumes/Transcend/github/nefarious-octo-prune/target/test-classes/info/smartkit/eip/cassandra]
+13:21:04.603 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/test-classes/info/smartkit/eip/cassandra] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/test-classes/info/smartkit/eip/cassandra/**/*EventRepositoryImpl.class]
+13:21:04.603 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra]
+13:21:04.603 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/**/*EventRepositoryImpl.class]
+13:21:04.604 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/configs] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/**/*EventRepositoryImpl.class]
+13:21:04.604 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/controllers] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/**/*EventRepositoryImpl.class]
+13:21:04.605 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/dao] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/**/*EventRepositoryImpl.class]
+13:21:04.606 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Searching directory [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/domain] for files matching pattern [/Volumes/Transcend/github/nefarious-octo-prune/target/classes/info/smartkit/eip/cassandra/**/*EventRepositoryImpl.class]
+13:21:04.606 [main] DEBUG o.s.c.i.s.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:info/smartkit/eip/cassandra/**/*EventRepositoryImpl.class] to resources []
+13:21:04.607 [main] DEBUG o.s.d.r.c.RepositoryConfigurationDelegate - Spring Data Cassandra - Registering repository: eventRepository - Interface: info.smartkit.eip.cassandra.dao.EventRepository - Factory: org.springframework.data.cassandra.repository.support.CassandraRepositoryFactoryBean
+13:21:04.619 [main] DEBUG o.s.c.a.ConfigurationClassEnhancer - Successfully enhanced info.smartkit.eip.cassandra.configs.CassandraConfiguration; enhanced class name is: info.smartkit.eip.cassandra.configs.CassandraConfiguration$$EnhancerBySpringCGLIB$$5d0f4467
+13:21:04.620 [main] DEBUG o.s.c.a.ConfigurationClassPostProcessor - Replacing bean definition 'cassandraConfiguration' existing class name 'info.smartkit.eip.cassandra.configs.CassandraConfiguration' with enhanced class name 'info.smartkit.eip.cassandra.configs.CassandraConfiguration$$EnhancerBySpringCGLIB$$5d0f4467'
+13:21:04.623 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+13:21:04.623 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+13:21:04.629 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor' to allow for resolving potential circular references
+13:21:04.629 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+13:21:04.630 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+13:21:04.630 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+13:21:04.630 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor' to allow for resolving potential circular references
+13:21:04.631 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+13:21:04.631 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+13:21:04.631 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+13:21:04.632 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor' to allow for resolving potential circular references
+13:21:04.632 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+13:21:04.632 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+13:21:04.632 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+13:21:04.632 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor' to allow for resolving potential circular references
+13:21:04.633 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+13:21:04.633 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+13:21:04.633 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+13:21:04.633 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor' to allow for resolving potential circular references
+13:21:04.633 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+13:21:04.634 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor'
+13:21:04.634 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor'
+13:21:04.634 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor' to allow for resolving potential circular references
+13:21:04.634 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor'
+13:21:04.635 [main] DEBUG o.s.c.s.GenericApplicationContext - Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@66746f57]
+13:21:04.635 [main] DEBUG o.s.c.s.GenericApplicationContext - Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@447a020]
+13:21:04.639 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@253d9f73: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,cassandraConfiguration,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor,cluster,cassandraMapping,session,cassandraTemplate,cassandraConverter,org.springframework.data.cassandra.repository.config.CassandraRepositoryConfigurationExtension#0,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor,eventRepository]; root of factory hierarchy
+13:21:04.639 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+13:21:04.639 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+13:21:04.639 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+13:21:04.640 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+13:21:04.640 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'cassandraConfiguration'
+13:21:04.640 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'cassandraConfiguration'
+13:21:04.643 [main] DEBUG o.s.b.f.annotation.InjectionMetadata - Registered injected element on class [info.smartkit.eip.cassandra.configs.CassandraConfiguration$$EnhancerBySpringCGLIB$$5d0f4467]: AutowiredFieldElement for private org.springframework.core.env.Environment info.smartkit.eip.cassandra.configs.CassandraConfiguration.environment
+13:21:04.643 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'cassandraConfiguration' to allow for resolving potential circular references
+13:21:04.644 [main] DEBUG o.s.b.f.annotation.InjectionMetadata - Processing injected element of bean 'cassandraConfiguration': AutowiredFieldElement for private org.springframework.core.env.Environment info.smartkit.eip.cassandra.configs.CassandraConfiguration.environment
+13:21:04.645 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'environment'
+13:21:04.646 [main] DEBUG o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - Autowiring by type from bean name 'cassandraConfiguration' to bean named 'environment'
+13:21:04.646 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'cassandraConfiguration'
+13:21:04.646 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+13:21:04.646 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+13:21:04.646 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'cluster'
+13:21:04.646 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'cluster'
+13:21:04.646 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cassandraConfiguration'
+13:21:04.647 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Searching for key 'cassandra.contactpoints' in [systemProperties]
+13:21:04.648 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Searching for key 'cassandra.contactpoints' in [systemEnvironment]
+13:21:04.648 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Searching for key 'cassandra.contactpoints' in [class path resource [cassandra.properties]]
+13:21:04.648 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'cassandra.contactpoints' in [class path resource [cassandra.properties]] with type [String] and value '127.0.0.1'
+13:21:04.649 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Searching for key 'cassandra.port' in [systemProperties]
+13:21:04.649 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Searching for key 'cassandra.port' in [systemEnvironment]
+13:21:04.650 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Searching for key 'cassandra.port' in [class path resource [cassandra.properties]]
+13:21:04.651 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'cassandra.port' in [class path resource [cassandra.properties]] with type [String] and value '9042'
+13:21:04.651 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'cluster' to allow for resolving potential circular references
+13:21:04.652 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name 'cluster'
+13:21:04.654 [main] DEBUG com.datastax.driver.core.Cluster - Starting new cluster with contact points [/127.0.0.1:9042]
+13:21:04.693 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'cluster'
+13:21:04.693 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'cassandraMapping'
+13:21:04.693 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'cassandraMapping'
+13:21:04.694 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cassandraConfiguration'
+13:21:04.698 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'cassandraMapping' to allow for resolving potential circular references
+13:21:04.699 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name 'cassandraMapping'
+13:21:04.699 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'cassandraMapping'
+13:21:04.699 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'session'
+13:21:04.699 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'session'
+13:21:04.699 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cassandraConfiguration'
+13:21:04.700 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cluster'
+13:21:04.700 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cluster'
+13:21:04.700 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'cassandraConverter'
+13:21:04.700 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'cassandraConverter'
+13:21:04.700 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cassandraConfiguration'
+13:21:04.701 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cassandraMapping'
+13:21:04.702 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'cassandraConverter' to allow for resolving potential circular references
+13:21:04.702 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name 'cassandraConverter'
+13:21:04.703 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'cassandraConverter'
+13:21:04.703 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Searching for key 'cassandra.keyspace' in [systemProperties]
+13:21:04.703 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Searching for key 'cassandra.keyspace' in [systemEnvironment]
+13:21:04.704 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Searching for key 'cassandra.keyspace' in [class path resource [cassandra.properties]]
+13:21:04.704 [main] DEBUG o.s.c.e.PropertySourcesPropertyResolver - Found key 'cassandra.keyspace' in [class path resource [cassandra.properties]] with type [String] and value 'events'
+13:21:04.705 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'session' to allow for resolving potential circular references
+13:21:04.706 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name 'session'
+13:21:04.711 [main] DEBUG com.datastax.driver.core.Connection - [/127.0.0.1:9042-1] Transport initialized and ready
+13:21:04.712 [main] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing node list and token map
+13:21:04.759 [main] DEBUG c.d.driver.core.ControlConnection - [Control connection] Refreshing schema
+13:21:04.840 [main] DEBUG c.d.driver.core.ControlConnection - [Control connection] Successfully connected to /127.0.0.1:9042
+13:21:04.841 [main] INFO  c.d.d.c.p.DCAwareRoundRobinPolicy - Using data-center name 'datacenter1' for DCAwareRoundRobinPolicy (if this is incorrect, please provide the correct datacenter name with DCAwareRoundRobinPolicy constructor)
+13:21:04.842 [Cassandra Java Driver worker-0] INFO  com.datastax.driver.core.Cluster - New Cassandra host /127.0.0.1:9042 added
+13:21:04.848 [Cassandra Java Driver worker-1] DEBUG com.datastax.driver.core.Connection - [/127.0.0.1:9042-2] Transport initialized and ready
+13:21:04.857 [Cassandra Java Driver worker-1] DEBUG com.datastax.driver.core.Connection - [/127.0.0.1:9042-3] Transport initialized and ready
+13:21:04.857 [Cassandra Java Driver worker-1] DEBUG com.datastax.driver.core.Session - Added connection pool for /127.0.0.1:9042
+13:21:04.867 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'session'
+13:21:04.868 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'cassandraTemplate'
+13:21:04.868 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'cassandraTemplate'
+13:21:04.869 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cassandraConfiguration'
+13:21:04.869 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'session'
+13:21:04.870 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'session'
+13:21:04.870 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cassandraConverter'
+13:21:04.873 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'cassandraTemplate' to allow for resolving potential circular references
+13:21:04.873 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name 'cassandraTemplate'
+13:21:04.874 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean 'cassandraTemplate'
+13:21:04.874 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cassandraConverter'
+13:21:04.874 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor'
+13:21:04.874 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating shared instance of singleton bean 'eventRepository'
+13:21:04.874 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean 'eventRepository'
+13:21:04.875 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Eagerly caching bean 'eventRepository' to allow for resolving potential circular references
+13:21:04.877 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean '(inner bean)#189aa67a'
+13:21:04.877 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean '(inner bean)#5a9d6f02'
+13:21:04.879 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name '(inner bean)#5a9d6f02'
+13:21:04.879 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean '(inner bean)#5a9d6f02'
+13:21:04.881 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean '(inner bean)#189aa67a'
+13:21:04.881 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Creating instance of bean '(inner bean)#6d9f7a80'
+13:21:04.882 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Finished creating instance of bean '(inner bean)#6d9f7a80'
+13:21:04.882 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Returning cached instance of singleton bean 'cassandraTemplate'
+13:21:04.882 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name 'eventRepository'
+13:21:04.885 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Retrieved dependent beans for bean '(inner bean)#189aa67a': [eventRepository]
+13:21:04.886 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Retrieved dependent beans for bean '(inner bean)#5a9d6f02': [(inner bean)#189aa67a]
+13:21:04.888 [main] WARN  o.s.c.s.GenericApplicationContext - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'eventRepository': Invocation of init method failed; nested exception is java.lang.AbstractMethodError: org.springframework.data.repository.core.support.RepositoryFactorySupport.getTargetRepository(Lorg/springframework/data/repository/core/RepositoryInformation;)Ljava/lang/Object;
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1572) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:736) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:759) ~[spring-context-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:259) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:261) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:219) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264) [surefire-junit4-2.17.jar:2.17]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.17.jar:2.17]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124) [surefire-junit4-2.17.jar:2.17]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200) [surefire-booter-2.17.jar:2.17]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153) [surefire-booter-2.17.jar:2.17]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.17.jar:2.17]
+Caused by: java.lang.AbstractMethodError: org.springframework.data.repository.core.support.RepositoryFactorySupport.getTargetRepository(Lorg/springframework/data/repository/core/RepositoryInformation;)Ljava/lang/Object;
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:185) ~[spring-data-commons-1.11.0.RELEASE.jar:na]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:251) ~[spring-data-commons-1.11.0.RELEASE.jar:na]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:237) ~[spring-data-commons-1.11.0.RELEASE.jar:na]
+	at org.springframework.data.cassandra.repository.support.CassandraRepositoryFactoryBean.afterPropertiesSet(CassandraRepositoryFactoryBean.java:62) ~[spring-data-cassandra-1.1.0.RELEASE.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1631) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1568) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	... 40 common frames omitted
+13:21:04.888 [main] DEBUG o.s.b.f.s.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@253d9f73: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,cassandraConfiguration,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor,cluster,cassandraMapping,session,cassandraTemplate,cassandraConverter,org.springframework.data.cassandra.repository.config.CassandraRepositoryConfigurationExtension#0,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor,eventRepository]; root of factory hierarchy
+13:21:04.889 [main] DEBUG o.s.b.f.s.DisposableBeanAdapter - Invoking destroy() on bean with name 'session'
+13:21:04.889 [main] DEBUG com.datastax.driver.core.Connection - [/127.0.0.1:9042-2] closing connection
+13:21:04.890 [main] DEBUG com.datastax.driver.core.Connection - [/127.0.0.1:9042-3] closing connection
+13:21:04.891 [main] DEBUG o.s.b.f.s.DisposableBeanAdapter - Invoking destroy() on bean with name 'cluster'
+13:21:04.891 [main] DEBUG com.datastax.driver.core.Cluster - Shutting down
+13:21:04.892 [main] DEBUG com.datastax.driver.core.Connection - [/127.0.0.1:9042-1] closing connection
+13:21:04.900 [main] ERROR o.s.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@34c4973] to prepare test instance [info.smartkit.eip.cassandra.EventRepositoryIntegrationTest@2250b9f2]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:94) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:259) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:261) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:219) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163) [spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264) [surefire-junit4-2.17.jar:2.17]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.17.jar:2.17]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124) [surefire-junit4-2.17.jar:2.17]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200) [surefire-booter-2.17.jar:2.17]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153) [surefire-booter-2.17.jar:2.17]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.17.jar:2.17]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'eventRepository': Invocation of init method failed; nested exception is java.lang.AbstractMethodError: org.springframework.data.repository.core.support.RepositoryFactorySupport.getTargetRepository(Lorg/springframework/data/repository/core/RepositoryInformation;)Ljava/lang/Object;
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1572) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:736) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:759) ~[spring-context-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:125) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:60) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.delegateLoading(AbstractDelegatingSmartContextLoader.java:109) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.support.AbstractDelegatingSmartContextLoader.loadContext(AbstractDelegatingSmartContextLoader.java:261) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86) ~[spring-test-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	... 25 common frames omitted
+Caused by: java.lang.AbstractMethodError: org.springframework.data.repository.core.support.RepositoryFactorySupport.getTargetRepository(Lorg/springframework/data/repository/core/RepositoryInformation;)Ljava/lang/Object;
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:185) ~[spring-data-commons-1.11.0.RELEASE.jar:na]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:251) ~[spring-data-commons-1.11.0.RELEASE.jar:na]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:237) ~[spring-data-commons-1.11.0.RELEASE.jar:na]
+	at org.springframework.data.cassandra.repository.support.CassandraRepositoryFactoryBean.afterPropertiesSet(CassandraRepositoryFactoryBean.java:62) ~[spring-data-cassandra-1.1.0.RELEASE.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1631) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1568) ~[spring-beans-4.1.8.RELEASE.jar:4.1.8.RELEASE]
+	... 40 common frames omitted
+]]></system-out>
+  </testcase>
+</testsuite>
